@@ -45,8 +45,8 @@ my_car.print_bus()
 
 
 # 3. Determine which class a given Bus object belongs to (Check type of an object)
-print(type(Bus))
-# <class 'type'>
+print(type(my_car))
+# <class '__main__.Bus'>
 
 
 # 4. Determine if School_bus is also an instance of the Vehicle class
