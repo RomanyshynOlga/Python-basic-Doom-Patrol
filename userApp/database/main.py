@@ -5,9 +5,9 @@ logging.basicConfig(filename='user_app.log', level=logging.DEBUG)
 
 while True:
     print("1. Add New User\n"
-          + "2. Get All Users\n"
-          + "3. Search\n"
-          + "4. Update User By Id"
+           + "2. Get All Users\n"
+           + "3. Search\n"
+           + "4. Update User By Id"
           )
     try:
         menu_flag = int(input("Type your choose: "))
@@ -28,7 +28,11 @@ while True:
             get_all()
     elif menu_flag == 3:
         logging.info("Search")
-        what_to_search = input('By Which Parametr you want to search: ')
+
+        what_to_search = input('By Which Parametr you want to search:\n'
+                               +'first_name\n'
+                               +'last_neme\n'
+                               'Email:\n')
         search_str = input('Search: ')
         try:
             search_by(search_str, what_to_search)

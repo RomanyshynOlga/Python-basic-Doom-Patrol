@@ -75,7 +75,15 @@ def update_user():
     file = open(Config.PATH_TO_USERS_FILE, 'r')
     users = json.loads(file.read())
     file.close()
-    id = int(input("Type id of user which you want to update: "))
+    try:
+        id = int(input("Type id of user which you want to update: "))
+    except ValueError:
+        print('You cant type letters')
+        logging.warning('somebody want to choose a letter!')
+        return
+    finally:
+        pass
+
     first_name = input("First Name: ")
     last_name = input("Last Name: ")
     email = input("Email: ")
