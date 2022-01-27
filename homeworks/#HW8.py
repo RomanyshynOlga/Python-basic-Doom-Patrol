@@ -8,7 +8,7 @@ def create_file():
     file = open('fileTT.txt', 'w')
     file.write('fileTT.txt')
     file.close()
-    return open('fileTT.txt', 'w')
+    return open('fileTT.txt', 'r')
 
 
 def add(x, y):
