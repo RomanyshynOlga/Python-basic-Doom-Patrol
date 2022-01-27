@@ -1,8 +1,14 @@
+import logging
+import os
+
+
 def create_file():
-    file = open('file.txt', 'w')
-    file.write(file.txt)
+    if os.path.exists('database') == False:
+        os.mkdir('database')
+    file = open('fileTT.txt', 'w')
+    file.write('fileTT.txt')
     file.close()
-    return open('file.txt', 'w')
+    return open('fileTT.txt', 'w')
 
 
 def add(x, y):
@@ -24,14 +30,15 @@ while True:
         print(number_1, "+", number_2, "=", add(number_1, number_2))
 
         try:
-            file = open('file.txt', 'r')
+            file = open('fileTT.txt', 'r')
         except FileNotFoundError:
+            logging.critical('File Not Found Error! Automatically Create file')
             file = create_file()
 
-        with open('file.txt', 'r') as file:
+        with open('fileTT.txt', 'r') as file:
             print()
 
-        with open('file.txt', 'a') as file:
+        with open('fileTT.txt', 'a') as file:
             file.write(f'\n {number_1} + {number_2} = {result} ')
 
     if menu_calculator == 2:
@@ -42,12 +49,13 @@ while True:
         print(number_1, "-", number_2, "=", substract(number_1, number_2))
 
         try:
-            file = open('file.txt', 'r')
+            file = open('fileTT.txt', 'r')
         except FileNotFoundError:
+            logging.critical('File Not Found Error! Automatically Create file')
             file = create_file()
 
-        with open('file.txt', 'r') as file:
+        with open('fileTT.txt', 'r') as file:
             print()
 
-        with open('file.txt', 'a') as file:
+        with open('fileTT.txt', 'a') as file:
             file.write(f'\n {number_1} - {number_2} = {result} ')
